@@ -1,0 +1,73 @@
+
+.splide__pagination__new {
+    bottom: -2em !important;
+}
+
+.splide__pagination__page__new {
+    background: #3a3a3b !important;
+    width: 15px !important;
+    height: 15px !important;
+    border: 2px solid white;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+    .splide__pagination__page__new.is-active {
+        background: #fff !important;
+        border: 2px solid black;
+    }
+
+.splide__arrow {
+    /*background: none !important;*/
+    /*background: #fff !important;*/
+    /*top: 104.5%;*/
+    /*bottom: 2em;*/
+}
+
+.splide__arrow--prev {
+    /*left: 35em;*/
+    /*top: 104.5%;*/
+   /* position: absolute;
+    right: 0;
+    left: 0;*/
+}
+
+.splide__arrow--next {
+    /*right: 35em;*/
+    /*top: 104.5%;*/
+    /*right: 0;*/
+    /*left: 0;*/
+}
+
+
+.slider-progress {
+    background: #fff;
+    margin-top: 3px;
+}
+
+.slider-progress-bar {
+    background: #94A8CB;
+    height: 5px;
+    transition: width 400ms ease;
+    width: 0;
+}
+
+.splide__progress__bar {
+    height: 5px;
+    background: #E4E5E7;
+}
+
+.splide__progress__bar__item {
+    height: 5px;
+    background: #94A8CB;
+}
+
+
+@media screen and (max-width: 576px) {
+    .splide__pagination__page__new {
+        width: 20px !important;
+        height: 20px !important;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+}

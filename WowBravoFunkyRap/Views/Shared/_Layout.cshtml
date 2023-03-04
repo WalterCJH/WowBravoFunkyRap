@@ -1,0 +1,179 @@
+﻿@{
+    string title = ViewData["Title"]?.ToString();
+    if (!string.IsNullOrWhiteSpace(title))
+    {
+        title = $"{title} • ";
+    }
+
+    title += "WOW BRAVO & FUNKY RAP";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="歡迎來到WOW BRAVO & FUNKY RAP！我們是一家專門販售繪畫、雕塑、服飾等藝術作品的店鋪。我們的目標是為客戶提供高品質的藝術作品，以及愉悅的購物體驗。我們的藝術品來自於來自全球各地的藝術家，包括當代藝術家、新進藝術家以及一些歷史上著名的大師。我們的作品包括油畫、水彩、素描、雕塑、攝影等多種形式，風格各異，從現代抽象到傳統寫實，應有盡有。我們的店鋪空間寬敞明亮，陳列著各種精美的藝術品。我們的員工都是對藝術充滿熱情的人，他們樂於幫助客戶找到心儀的作品，並且提供有關藝術品的詳細信息和歷史背景。此外，我們還定期舉辦藝術展覽，展示不同主題的藝術作品。這是一個讓藝術家和客戶互相交流的平台，讓您可以更深入地了解藝術和藝術家。我們致力於為客戶提供最好的藝術體驗，如果您正在尋找一件高品質的藝術品，或者想要欣賞一下藝術品的美，歡迎來到我們的藝術店，讓我們為您帶來一場視覺上的盛宴。">
+    <title>@title</title>
+
+    <link rel="stylesheet" href="~/css/reset.min.css" asp-append-version="true" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjxAwXjeu.woff2" as="font" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjx4wXg.woff2" as="font" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVSwaPGR_p.woff2" as="font" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVSwiPGQ.woff2" as="font" crossorigin />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" as="style" />
+
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" type="text/css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" asp-append-version="true" />*@
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
+    <link rel="stylesheet" href="~/css/common.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    @await RenderSectionAsync("Styles", required: false)
+
+    @*Google Tag Manager*@
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WJ5L3RS');</script>
+    @*End Google Tag Manager*@
+</head>
+<body>
+    @*Google Tag Manager (noscript)*@
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ5L3RS"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    @*End Google Tag Manager (noscript)*@
+
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" /> @*using for mobile menu*@
+
+    <header>
+        <nav class="navbar navbar-opacity">
+            <div class="container header">
+                <div class="logo">
+                    <a asp-action="Index" asp-controller="Home">
+                        <img src="~/image/logo.svg" alt="WOW BRAVO & FUNKY RAP LOGO" title="WOW BRAVO & FUNKY RAP LOGO" class="mw-100 img-logo" />
+                    </a>
+                </div>
+
+                <label for="nav-trigger" class="nav-trigger-bar"><i class="fa-solid fa-bars"></i></label>
+                <ul class="navbar-nav">
+                    <li>
+                        <div class="circle-close">
+                            <label for="nav-trigger">
+                                <picture>
+                                    <source srcset="~/image/circle-close.webp" type="image/webp">
+                                    <img src="~/image/circle-close.pnb" alt="關閉" title="關閉" class="img-circle-close">
+                                </picture>
+                            </label>
+                        </div>
+                    </li>
+                    <li><a href="#">FASHION</a></li>
+                    <li><a href="#">EXHIBITIONS</a></li>
+                    <li><a href="#">STAGES</a></li>
+                    <li><a href="#">EVENTS</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li class="infos">
+                        <div>
+                            <img src="~/image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo_horizontal" />
+                        </div>
+                        <div class="text">台灣設計師品牌 | 服裝 | 展覽 | 表演</div>
+                        <div class="text">Taiwan Designers Brands </div>
+                        <div class="text">Exhibitions</div>
+                        <div class="text">Performance </div>
+                        <div class="text">Customizations</div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="pb-3">
+        <div class="wrap">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="footer">
+            <div class="container web">
+                <div class="infos">
+                    <div>台灣設計師品牌 | 服裝 | 展覽 | 表演</div>
+                    <div>Taiwan Designers Brands </div>
+                    <div>Exhibitions</div>
+                    <div>Performance </div>
+                    <div>Customizations</div>
+                </div>
+                <div class="icons">
+                    <ul class="icon-list">
+                        <li><a href="https://www.facebook.com/WowBravoFunkyRap" aria-label="連結到FB"><i class="fa-brands fa-facebook-square"></i></a></li>
+                        <li><a href="https://www.instagram.com/wowbravo_funkyrap/" aria-label="連結到IG"><i class="fa-brands fa-instagram-square"></i></a></li>
+                        <li><a href="#" aria-label="連結到Pinterest"><i class="fa-brands fa-pinterest-square"></i></a></li>
+                        <li><a href="mailto:contact@wowbravo-funkyrap.com" aria-label="連結到Email"><i class="fa-solid fa-square-envelope"></i></a></li>
+
+                        <!--
+                                    <li><a href="https://www.facebook.com/WowBravoFunkyRap"><img src="~/image/icon-fb.png" alt="FB" class="icon-img"></a></li>
+                                    <li><a href="https://www.instagram.com/wowbravo_funkyrap/"><img src="~/image/icon-ig.png" alt="IG" class="icon-img"></a></li>
+                                    <li><a href="#"><img src="~/image/icon-pinteres.png" alt="Pinteres" class="icon-img"></a></li>
+                                    <li><a href="mailto:contact@wowbravo-funkyrap.com"><img src="~/image/icon-envelope.png" alt="Envelope" class="icon-img"></a></li> -->
+                    </ul>
+                    <!-- <ul class="icon-list">
+                        <li><a href="https://www.facebook.com/WowBravoFunkyRap"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/wowbravo_funkyrap/"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                        <li><a href="mailto:contact@wowbravo-funkyrap.com"><i class="fa-solid fa-envelope"></i></a></li>
+                    </ul> -->
+                    <div class="copyright">
+                        © 2010-@DateTime.Now.Year WOW BRAVO & FUNKY RAP
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="address-tc">台北市士林區中山北路七段118號</div>
+                    <div>No.118, Sec.7, Zhongshan N. Rd.,</div>
+                    <div>Shilin Dist., Taipei City 11151</div>
+                    <div>EVERY DAY 13:30-21:30</div>
+                    <div>02-2874-0517</div>
+                </div>
+            </div>
+
+            <div class="container mobile">
+                <div class="icons">
+                    <ul class="icon-list">
+                        <li><a href="https://www.facebook.com/WowBravoFunkyRap" aria-label="連結到FB"><i class="fa-brands fa-facebook-square"></i></a></li>
+                        <li><a href="https://www.instagram.com/wowbravo_funkyrap/" aria-label="連結到IG"><i class="fa-brands fa-instagram-square"></i></a></li>
+                        <li><a href="#" aria-label="連結到Pinterest"><i class="fa-brands fa-pinterest-square"></i></a></li>
+                        <li><a href="mailto:contact@wowbravo-funkyrap.com" aria-label="連結到Email"><i class="fa-solid fa-square-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <div class="contacts">
+                    <div class="p">
+                        <div class="address-tc">台北市士林區中山北路七段118號</div>
+                        <div>No.118, Sec.7, Zhongshan N. Rd.,</div>
+                        <div>Shilin Dist., Taipei City 11151</div>
+                    </div>
+                    <div class="p">
+                        <div>EVERY DAY 13:30-21:30</div>
+                        <div>02-2874-0517</div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    © 2010-@DateTime.Now.Year WOW BRAVO & FUNKY RAP
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer="defer" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-append-version="true"></script>
+    <script src="~/js/site.js" defer="defer" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,219 @@
+/* banner */
+.banner {
+    margin-bottom: 50px;
+    min-height: 556px;
+}
+
+/* content */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.introduce {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 80px;
+}
+
+    .introduce .logo-horizontal {
+        margin-bottom: 30px;
+    }
+
+    .introduce .section-first {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 50px;
+        text-align: justify;
+        /*letter-spacing: 0.2em;*/
+    }
+
+        .introduce .section-first p {
+            margin-bottom: 15px;
+        }
+
+    .introduce .section-second {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 100px;
+        text-align: justify;
+        /*letter-spacing: 0.1em;*/
+    }
+
+.brand-image {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-section {
+    border-top: solid 2px #e2e2e2;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+    .content-section .title {
+        font-size: 20px;
+        padding-bottom: 30px;
+        letter-spacing: 0.1em;
+    }
+
+        .content-section .title span {
+            font-weight: 900;
+            letter-spacing: 0.2em;
+        }
+
+.inner-content-section {
+    display: flex;
+}
+
+.transportation-info {
+    border-right: solid 2px #e2e2e2;
+    padding-right: 50px;
+    margin-right: 50px;
+}
+
+.address-info {
+    display: flex;
+}
+
+    .address-info .address-left {
+        width: 155px;
+    }
+
+    .address-info .address-item {
+        margin-bottom: 45px;
+    }
+
+    .address-info .address-item-first {
+        letter-spacing: 0.1em;
+    }
+
+    .address-info .address-item:last-child {
+        margin-bottom: 0px;
+    }
+
+@media screen and (max-width: 1145px) {
+    .banner {
+        min-height: 530px;
+    }
+    .address-info {
+        display: block;
+    }
+
+        .address-info .address-left {
+            margin-bottom: 30px;
+        }
+}
+
+@media screen and (max-width: 992px) {
+    .banner {
+        min-height: 457px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* banner */
+    .banner {
+        margin-bottom: 70px;
+        min-height: 350px;
+    }
+
+        .banner .container {
+            padding: 0;
+        }
+
+    /* content */
+    .content {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .introduce {
+        width: 100%;
+        align-items: center;
+        padding-right: 0px;
+    }
+
+        .introduce .section-first {
+            font-size: 13px;
+            margin-bottom: 50px;
+        }
+
+        .introduce .section-second {
+            font-size: 13px;
+            margin-bottom: 50px;
+        }
+
+        .introduce .logo-horizontal {
+            width: 80%;
+        }
+
+    .brand-image {
+        width: 100%;
+    }
+
+    .content-section .title {
+        font-size: 16px;
+    }
+
+    .inner-content-section {
+        display: flex;
+        flex-direction: column;
+        /*text-align: center;*/
+        /*width: 80%;*/
+        /*margin: auto;*/
+    }
+
+    .transportation-info {
+        border-right: none;
+        /*border-bottom: solid 2px #e2e2e2;*/
+        border-bottom: none;
+        padding-right: 0px;
+        margin-right: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+
+    iframe {
+        aspect-ratio: 16/9;
+        height: 100%;
+        width: 100%;
+    }
+
+    .address-info {
+        display: none;
+    }
+    /*
+    .address-info {
+        display: flex;
+    }
+
+        .address-info .address-left {
+            margin-bottom: 0px;
+        }*/
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        min-height: 266px;
+        max-height: 266px;
+    }
+    /*   .address-info {
+        display: block;
+    }
+
+        .address-info .address-left {
+            margin-bottom: 30px;
+        }*/
+}
+
+@media screen and (max-width: 414px) {
+    .banner {
+        min-height: 201px;
+        max-height: 201px;
+    }
+}
