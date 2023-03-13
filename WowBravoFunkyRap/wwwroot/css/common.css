@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', Arial,"PingFang TC",Roboto, 微軟正黑體, "Microsoft JhengHei", sans-serif;
     font-weight: 500;
     /* overflow-x: hidden; */
 }
@@ -23,7 +23,7 @@ body {
 
 /* layout */
 .wrap {
-    margin-top: 85px;
+    margin-top: 75px;
     padding-bottom: 20px;
 }
 
@@ -49,16 +49,20 @@ body {
     z-index: 1000;
 }
 
+    .navbar .nav-link {
+        font-size: 15px;
+    }
+
 .header {
     display: flex;
     align-items: center;
-    padding: 30px 20px 30px 20px;
+    padding: 20px 20px 20px 20px;
     justify-content: space-between;
     background-color: #fff;
 }
 
     .header .img-logo {
-        width: 195px;
+        width: 160px;
     }
 
     .header .navbar-nav {
@@ -146,7 +150,11 @@ body {
             letter-spacing: 0.6px;
         }
 
+/* md */
 @media screen and (max-width: 768px) {
+    .wrap {
+        margin-top: 80px;
+    }
     .wrap,
     .footer {
         position: relative;
@@ -244,7 +252,11 @@ body {
             }
 }
 
+/* sm */
 @media screen and (max-width: 576px) {
+    .wrap {
+        margin-top: 72.58px;
+    }
     .header .logo {
         width: 30%;
     }
@@ -268,7 +280,11 @@ body {
     }
 }
 
+/* xs */
 @media screen and (max-width: 414px) {
+    .wrap {
+        margin-top: 60px;
+    }
     .header .nav-trigger-bar i {
         font-size: 20px;
     }
