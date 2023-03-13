@@ -150,11 +150,19 @@ body {
             letter-spacing: 0.6px;
         }
 
+.under-construction {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 /* md */
 @media screen and (max-width: 768px) {
     .wrap {
         margin-top: 80px;
     }
+
     .wrap,
     .footer {
         position: relative;
@@ -257,6 +265,7 @@ body {
     .wrap {
         margin-top: 72.58px;
     }
+
     .header .logo {
         width: 30%;
     }
@@ -285,6 +294,7 @@ body {
     .wrap {
         margin-top: 60px;
     }
+
     .header .nav-trigger-bar i {
         font-size: 20px;
     }

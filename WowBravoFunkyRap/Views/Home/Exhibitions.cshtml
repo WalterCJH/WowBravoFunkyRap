@@ -1,0 +1,236 @@
+﻿@{
+    ViewData["Title"] = "展覽";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/exhibitions.min.css" />
+}
+@section Scripts{
+    <script>
+        function openTab(evt, name) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("js-tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(name).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        const first_tab = document.getElementsByClassName("js-tablinks");
+        first_tab[0].click();
+    </script>
+}
+
+<div class="tab">
+    <div class="container">
+        <button class="tab-btn js-tablinks" onclick="openTab(event, 'PAST-EXHIBITION')">
+            <span class="zh-tc">歷年展覽</span><br />
+            <span class="us-en">PAST EXHIBITION</span>
+        </button>
+        <button class="tab-btn js-tablinks" onclick="openTab(event, 'ANIMAMIX-MUSEUM')">
+            <span class="zh-tc">空間介紹</span><br />
+            <span class="us-en">ANIMAMIX MUSEUM</span>
+        </button>
+    </div>
+</div>
+
+<div class="container">
+    <div id="PAST-EXHIBITION" class="tabcontent">
+        <div class="exhibition">
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        @* <source srcset="~/image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
+                        <source srcset="~/image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">*@
+                        <img src="~/image/exhibition/exhi44.webp" alt="exhi44" title="exhi44" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 台北市視障者家長協會 PAVI |
+                </div>
+                <div class="name-en">
+                    Let Sight Take Flight
+                </div>
+                <div class="name-tw">
+                    視非棲息地
+                </div>
+                <div class="period">
+                    November 18, 2022 - January 10, 2023
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi43.webp" alt="exhi43" title="exhi43" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 林芳存 Tina Lin |
+                </div>
+                <div class="name-en">
+                    From the Darkness
+                </div>
+                <div class="name-tw">
+                    從黑暗中
+                </div>
+                <div class="period">
+                    September 16, 2022 - November 1, 2022
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi42.webp" alt="exhi42" title="exhi42" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 顏維萱 Yen, Wei Hsuan |
+                </div>
+                <div class="name-en">
+                    The Same Soul
+                </div>
+                <div class="name-tw">
+                    同樣的靈魂
+                </div>
+                <div class="period">
+                    May 30, 2022 - August 30, 2022
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi41.webp" alt="exhi41" title="exhi41" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 周瑞萍Rae Chou x 孩子們Kids |
+                </div>
+                <div class="name-en">
+                    Barefoot X Playgroup
+                </div>
+                <div class="name-tw">
+                    光腳的孩子
+                </div>
+                <div class="period">
+                    December 11, 2021 - April 31, 2022
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi40.webp" alt="exhi40" title="exhi40" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 范皓鈞 Till Fang |
+                </div>
+                <div class="name-en">
+                    In the Progress
+                </div>
+                <div class="name-tw">
+                    　
+                </div>
+                <div class="period">
+                    November 1, 2021 - December 1, 2021
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi39.webp" alt="exhi39" title="exhi39" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 許僑芙 Chiao Fu |
+                </div>
+                <div class="name-en">
+                    Not Just Yet
+                </div>
+                <div class="name-tw">
+                    時候未到
+                </div>
+                <div class="period">
+                    April 10, 2021 - May 30, 2021
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi38.webp" alt="exhi38" title="exhi38" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 黃明仁Huang Ming-Jen、程怡慈Teiiji、顏維萱Yen Wei-Hsuan |
+                </div>
+                <div class="name-en">
+                    Visibility
+                </div>
+                <div class="name-tw">
+                    能見度
+                </div>
+                <div class="period">
+                    December 20, 2020 - March 20, 2021
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi37.webp" alt="exhi37" title="exhi37" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | Haley James |
+                </div>
+                <div class="name-en">
+                    The Multitudes of Self
+                </div>
+                <div class="name-tw">
+                    多重自我
+                </div>
+                <div class="period">
+                    July 25, 2020 - November 25, 2020
+                </div>
+            </div>
+            <div class="item">
+                <div class="img">
+                    <picture>
+                        <img src="~/image/exhibition/exhi36.webp" alt="exhi36" title="exhi36" class="mw-100">
+                    </picture>
+                </div>
+                <div class="exhibitor">
+                    | 賴維崇、張心瑜 |
+                </div>
+                <div class="name-en">
+                    Through the Chaos
+                </div>
+                <div class="name-tw">
+                    渾沌視界
+                </div>
+                <div class="period">
+                    June 15, 2020 - July 15, 2020
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ANIMAMIX-MUSEUM" class="tabcontent">
+        <div class="under-construction">建置中，近請期待。</div>
+    </div>
+</div>
+@*
+<div class="container">
+    <div class="content">
+        <div class="introduce">
+            <picture>
+                <source srcset="~/image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
+                <source srcset="~/image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">
+                <img src="~/image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo-horizontal">
+            </picture>
+        </div>
+    </div>
+</div>
+*@
