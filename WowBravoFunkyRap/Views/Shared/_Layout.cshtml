@@ -30,7 +30,6 @@
     @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" asp-append-version="true" />*@
     @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
     <link rel="stylesheet" href="~/css/common.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
 
@@ -58,7 +57,7 @@
 
     <header>
         <nav class="navbar navbar-opacity">
-            <div class="container header">
+            <div class="container navbar-nav">
                 <div class="logo">
                     <a asp-action="Index" asp-controller="Home">
                         <img src="~/image/logo.svg" alt="WOW BRAVO & FUNKY RAP LOGO" title="WOW BRAVO & FUNKY RAP LOGO" class="mw-100 img-logo" />
@@ -66,7 +65,7 @@
                 </div>
 
                 <label for="nav-trigger" class="nav-trigger-bar"><i class="fa-solid fa-bars"></i></label>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav-list">
                     <li>
                         <div class="circle-close">
                             <label for="nav-trigger">

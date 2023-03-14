@@ -15,19 +15,24 @@
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 8px 20px 5px 9px;
+    padding: 8px 0px 6px 11px;
     text-align: left;
     transition: 0.3s;
-    font-size: 14px;
-    line-height: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 195px;
 }
 
     .tab-btn .zh-tc {
-        letter-spacing: 0.3em;
+        line-height: 23px;
+        letter-spacing: 0.25em;
+        /*letter-spacing: 0.3em;*/
+        /*margin-bottom: 3px;*/
     }
 
     .tab-btn .us-en {
-        letter-spacing: 0.1em;
+        line-height: 19px;
+        letter-spacing: 0.05em;
     }
 
     /* Change background color of buttons on hover */
@@ -52,45 +57,74 @@
 .exhibition {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
     .exhibition .item {
-        margin-bottom: 60px;
+        display: flex;
+        margin-bottom: 72px;
         text-align: center;
         flex: 33.33%;
         max-width: 33.33%;
-        padding: 0 4px;
+        /*padding: 0 4px;*/
+        padding-right: 5px;
     }
 
-        .exhibition .item .img {
-            display: flex;
+        .exhibition .item:nth-child(2), .exhibition .item:nth-child(5), .exhibition .item:nth-child(8) {
             justify-content: center;
-            margin-bottom: 20px;
+            padding: 0 5px;
         }
 
-        .exhibition .item .exhibitor {
-            font-size: 12px;
-            color: #8A8A8A;
-            margin-bottom: 20px;
+        .exhibition .item:nth-child(3), .exhibition .item:nth-child(6), .exhibition .item:nth-child(9) {
+            justify-content: end;
+            padding-left: 5px;
         }
 
-        .exhibition .item .name-en, .exhibition .item .name-tw {
-            font-size: 18px;
-            font-weight: 900;
-        }
+    .exhibition .item-inner {
+        max-width: 355px;
+    }
 
-        .exhibition .item .name-en {
-            margin-bottom: 12px;
-        }
+    .exhibition .item .img {
+        margin-bottom: 24px;
+    }
 
-        .exhibition .item .name-tw {
-            margin-bottom: 20px;
-        }
+    .exhibition .item .exhibitor {
+        color: #707070;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+        margin-bottom: 16px;
+        /*height: 34px;*/
+    }
 
-        .exhibition .item .period {
-            font-size: 12px;
-            color: #8A8A8A;
-        }
+    .exhibition .item .name {
+        font-size: 20px;
+        font-weight: 500;
+        height: 57px;
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .exhibition .item .name-en {
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
+    }
+
+    .exhibition .item .name-tw {
+        line-height: 29px;
+        letter-spacing: 0.15em;
+    }
+
+    .exhibition .item .period {
+        color: #707070;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14px;
+        letter-spacing: 0.06em;
+    }
 
 
 
@@ -107,21 +141,24 @@
     .exhibition .item {
         flex: 50%;
         max-width: 50%;
+        justify-content: center !important;
+        padding: 0 10px !important;
     }
-}
 
-/* md */
-@media screen and (max-width: 768px) {
-}
 
-/* sm */
-@media screen and (max-width: 576px) {
-    .exhibition .item {
-        flex: 100%;
-        max-width: 100%;
+    /* md */
+    @media screen and (max-width: 768px) {
     }
-}
 
-/* xs */
-@media screen and (max-width: 414px) {
-}
+    /* sm */
+    @media screen and (max-width: 576px) {
+        .exhibition .item {
+            flex: 100%;
+            max-width: 100%;
+            padding: 0 !important;
+        }
+    }
+
+    /* xs */
+    @media screen and (max-width: 414px) {
+    }

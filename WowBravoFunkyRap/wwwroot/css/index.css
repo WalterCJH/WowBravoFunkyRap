@@ -1,9 +1,3 @@
-/* banner */
-.banner {
-    margin-bottom: 50px;
-    min-height: 556px;
-}
-
 /* content */
 .content {
     display: flex;
@@ -19,15 +13,15 @@
 }
 
     .introduce .logo-horizontal {
+        margin-top: 10px;
         margin-bottom: 30px;
     }
 
     .introduce .section-first {
-        font-size: 16px;
-        line-height: 1.7;
-        margin-bottom: 50px;
+        line-height: 26px;
+        letter-spacing: 0.1em;
         text-align: justify;
-        /*letter-spacing: 0.2em;*/
+        margin-bottom: 50px;
     }
 
         .introduce .section-first p {
@@ -35,11 +29,9 @@
         }
 
     .introduce .section-second {
-        font-size: 15px;
-        line-height: 1.7;
-        margin-bottom: 100px;
+        line-height: 28px;
         text-align: justify;
-        /*letter-spacing: 0.1em;*/
+        margin-bottom: 100px;
     }
 
 .brand-image {
@@ -52,18 +44,27 @@
 .content-section {
     border-top: solid 2px #e2e2e2;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 48px;
 }
 
     .content-section .title {
-        font-size: 20px;
-        padding-bottom: 30px;
-        letter-spacing: 0.1em;
+        display: flex;
+        font-weight: 500;
+        margin-bottom: 30px;
+        align-items: center;
     }
 
-        .content-section .title span {
-            font-weight: 900;
-            letter-spacing: 0.2em;
+        .content-section .title .name-tw {
+            font-size: 22px;
+            line-height: 32px;
+            letter-spacing: 0.25em;
+            margin-right: 6px;
+        }
+
+        .content-section .title .name-en {
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 0.06em;
         }
 
 .inner-content-section {
@@ -78,28 +79,36 @@
 
 .address-info {
     display: flex;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.04em;
+    margin-top: 5px;
 }
 
     .address-info .address-left {
         width: 155px;
     }
 
+    .address-info .address-item.name-tw {
+        font-size: 20px;
+        letter-spacing: 0.2em;
+    }
+
+    .address-info .address-item.name-en {
+        line-height: 22px;
+        letter-spacing: 0;
+    }
+
     .address-info .address-item {
         margin-bottom: 45px;
     }
 
-    .address-info .address-item-first {
-        letter-spacing: 0.1em;
-    }
-
-    .address-info .address-item:last-child {
-        margin-bottom: 0px;
-    }
+        .address-info .address-item:last-child {
+            margin-bottom: 0px;
+        }
 
 @media screen and (max-width: 1145px) {
-    .banner {
-        min-height: 530px;
-    }
+
     .address-info {
         display: block;
     }
@@ -110,21 +119,13 @@
 }
 
 @media screen and (max-width: 992px) {
-    .banner {
-        min-height: 457px;
-    }
 }
 
 @media screen and (max-width: 768px) {
     /* banner */
-    .banner {
-        margin-bottom: 70px;
-        min-height: 350px;
+    .banner .container {
+        padding: 0;
     }
-
-        .banner .container {
-            padding: 0;
-        }
 
     /* content */
     .content {
@@ -149,28 +150,22 @@
         }
 
         .introduce .logo-horizontal {
-            width: 80%;
+            width: 400px;
+            margin-top: 0px;
+            margin-bottom: 15px;
         }
 
     .brand-image {
         width: 100%;
     }
 
-    .content-section .title {
-        font-size: 16px;
-    }
-
     .inner-content-section {
         display: flex;
         flex-direction: column;
-        /*text-align: center;*/
-        /*width: 80%;*/
-        /*margin: auto;*/
     }
 
     .transportation-info {
         border-right: none;
-        /*border-bottom: solid 2px #e2e2e2;*/
         border-bottom: none;
         padding-right: 0px;
         margin-right: 0px;
@@ -187,33 +182,16 @@
     .address-info {
         display: none;
     }
-    /*
-    .address-info {
-        display: flex;
-    }
-
-        .address-info .address-left {
-            margin-bottom: 0px;
-        }*/
 }
 
 @media screen and (max-width: 576px) {
-    .banner {
-        min-height: 266px;
-        max-height: 266px;
+    .introduce .logo-horizontal {
+        width: 350px;
     }
-    /*   .address-info {
-        display: block;
-    }
-
-        .address-info .address-left {
-            margin-bottom: 30px;
-        }*/
 }
 
 @media screen and (max-width: 414px) {
-    .banner {
-        min-height: 201px;
-        max-height: 201px;
+    .introduce .logo-horizontal {
+        width: 300px;
     }
 }

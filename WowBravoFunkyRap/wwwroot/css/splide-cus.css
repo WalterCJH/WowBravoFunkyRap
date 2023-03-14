@@ -1,6 +1,11 @@
 
+.splide__pagination {
+    position: unset !important;
+    margin: 5px 0 !important;
+}
+
 .splide__pagination__new {
-    bottom: -2em !important;
+    /*bottom: -2em !important;*/
 }
 
 .splide__pagination__page__new {
@@ -8,8 +13,8 @@
     width: 15px !important;
     height: 15px !important;
     border: 2px solid white;
-    margin-left:5px;
-    margin-right:5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
     .splide__pagination__page__new.is-active {
@@ -27,7 +32,7 @@
 .splide__arrow--prev {
     /*left: 35em;*/
     /*top: 104.5%;*/
-   /* position: absolute;
+    /* position: absolute;
     right: 0;
     left: 0;*/
 }

@@ -11,7 +11,8 @@
 
 body {
     font-family: 'Lato', Arial,"PingFang TC",Roboto, 微軟正黑體, "Microsoft JhengHei", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 16px;
     /* overflow-x: hidden; */
 }
 
@@ -23,7 +24,7 @@ body {
 
 /* layout */
 .wrap {
-    margin-top: 75px;
+    margin-top: 81px; /* NavBar高度 */
     padding-bottom: 20px;
 }
 
@@ -49,59 +50,56 @@ body {
     z-index: 1000;
 }
 
-    .navbar .nav-link {
-        font-size: 15px;
-    }
-
-.header {
+.navbar-nav {
     display: flex;
     align-items: center;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px; /* NavBar高度 41+上下間距 */
     justify-content: space-between;
     background-color: #fff;
 }
 
-    .header .img-logo {
+    .navbar-nav .img-logo {
         width: 160px;
     }
 
-    .header .navbar-nav {
+    .navbar-nav .navbar-nav-list {
         display: flex;
         align-items: center;
     }
 
-        .header .navbar-nav li a {
+        .navbar-nav .navbar-nav-list li a {
             display: block;
-            padding: 10px 20px;
             color: #000;
             text-decoration: none;
+            line-height: 19px;
+            letter-spacing: 0.05em;
+            padding: 10px 20px;
         }
 
-            .header .navbar-nav li a:hover {
+            .navbar-nav .navbar-nav-list li a:hover {
                 color: #fff;
                 background-color: #ACADAF;
                 border-radius: 15px;
             }
 
-        .header .navbar-nav .circle-close,
-        .header .navbar-nav .infos {
+        .navbar-nav .navbar-nav-list .circle-close,
+        .navbar-nav .navbar-nav-list .infos {
             display: none;
         }
 
-        .header .navbar-nav .img-circle-close {
+        .navbar-nav .navbar-nav-list .img-circle-close {
             max-width: 72px;
             cursor: pointer;
             padding: 20px;
         }
 
-    .header .nav-trigger-bar {
+    .navbar-nav .nav-trigger-bar {
         display: none;
     }
 
 
 /* footer */
 .footer {
-    font-size: 16px;
     line-height: 24px;
     font-family: 'Noto Sans TC', 'Noto Sans', sans-serif;
     background-image: url('/image/footer-bg.webp');
@@ -171,16 +169,16 @@ body {
         right: 0;
     }
 
-    .header .nav-trigger-bar {
+    .navbar-nav .nav-trigger-bar {
         display: block;
     }
 
-        .header .nav-trigger-bar i {
+        .navbar-nav .nav-trigger-bar i {
             cursor: pointer;
             font-size: 40px;
         }
 
-    .header .navbar-nav {
+    .navbar-nav .navbar-nav-list {
         flex-direction: column;
         background-color: #fafafa;
         /* critical sizing and position styles */
@@ -190,13 +188,13 @@ body {
         right: -235px;
     }
     /* hamberger menu trigger animation */
-    .navbar-nav,
+    .navbar-nav-list,
     .wrap,
     .footer {
         transition: right 1s;
     }
 
-    .nav-trigger:checked ~ * .navbar-nav {
+    .nav-trigger:checked ~ * .navbar-nav-list {
         right: 0px;
     }
 
@@ -205,37 +203,37 @@ body {
         right: 245px;
     }
 
-    .header .navbar-nav li {
+    .navbar-nav .navbar-nav-list li {
         display: block;
         width: 100%;
         font-size: 21.6px;
     }
 
-        .header .navbar-nav li a,
-        .header .navbar-nav .infos {
-            padding: 18px 20px; /* 左右padding對應到 .navbar-nav > right:-290px */
+        .navbar-nav .navbar-nav-list li a,
+        .navbar-nav .navbar-nav-list .infos {
+            padding: 18px 20px; /* 左右padding對應到 .navbar-nav-list > right:-290px */
         }
 
-            .header .navbar-nav li a:hover {
+            .navbar-nav .navbar-nav-list li a:hover {
                 border-radius: 0px;
             }
 
-    .header .navbar-nav .circle-close {
+    .navbar-nav .navbar-nav-list .circle-close {
         display: flex;
         justify-content: flex-end;
     }
 
-    .header .navbar-nav .infos {
+    .navbar-nav .navbar-nav-list .infos {
         display: block;
         margin-top: 70px;
     }
 
-        .header .navbar-nav .infos .text {
+        .navbar-nav .navbar-nav-list .infos .text {
             font-size: 13px;
             margin-bottom: 20px;
         }
 
-        .header .navbar-nav .infos .logo_horizontal {
+        .navbar-nav .navbar-nav-list .infos .logo_horizontal {
             /* width: 240px; */
             margin-bottom: 25px;
         }
@@ -266,11 +264,11 @@ body {
         margin-top: 72.58px;
     }
 
-    .header .logo {
+    .navbar-nav .logo {
         width: 30%;
     }
 
-    .header .navbar-nav {
+    .navbar-nav .navbar-nav-list {
         right: -270px;
         width: 270px;
     }
@@ -280,7 +278,7 @@ body {
         right: 280px;
     }
 
-    .header .nav-trigger-bar i {
+    .navbar-nav .nav-trigger-bar i {
         font-size: 30px;
     }
 
@@ -295,11 +293,11 @@ body {
         margin-top: 60px;
     }
 
-    .header .nav-trigger-bar i {
+    .navbar-nav .nav-trigger-bar i {
         font-size: 20px;
     }
 
-    .header .navbar-nav {
+    .navbar-nav .navbar-nav-list {
         right: -250px;
         width: 250px;
     }

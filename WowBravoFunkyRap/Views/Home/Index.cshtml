@@ -6,7 +6,8 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" as="style" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/splide-cus.min.css" />
+    <link rel="stylesheet" href="~/css/splide-cus.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
 }
 @section Scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.min.js" integrity="sha512-4TcjHXQMLM7Y6eqfiasrsnRCc8D/unDeY1UGKGgfwyLUCTsHYMxF7/UHayjItKQKIoP6TTQ6AMamb9w2GMAvNg==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-append-version="true"></script>
@@ -56,7 +57,7 @@
 
 
         splide.mount();
-                            //splide.mount(window.splide.Extensions);
+                                            //splide.mount(window.splide.Extensions);
     </script>
 }
 
@@ -118,21 +119,21 @@
 <div class="container">
     <div class="content">
         <div class="introduce">
-            <picture>
-                <source srcset="~/image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
-                <source srcset="~/image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">
-                <img src="~/image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo-horizontal">
-            </picture>
+            <div>
+                <picture>
+             @*       <source srcset="~/image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
+                    <source srcset="~/image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">*@
+                    <img src="~/image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo-horizontal">
+                </picture>
+            </div>
             @*<img src="~/image/logo_horizontal.svg" alt="" class="mw-100 logo-horizontal" />*@
             <div class="section-first">
                 <p>
                     WOW BRAVO & FUNKY RAP 是一個堅持理想的台灣品牌，以精緻手工製作每一個設計細節，概念店 1F 以純白花園為意象，展示設計師們美麗的衣裳。
                 </p>
-                <br />
                 <p>
                     2F 為藝術空間，舉辦各類型創作展覽與表演活動，同時展示其他台灣年輕設計師品牌服裝。
                 </p>
-                <br />
                 <p>
                     3F 為設計師工作室，可接受客戶訂製。
                 </p>
@@ -159,7 +160,7 @@
 
     <div class="content-section">
         <div class="title">
-            <span>最新資訊｜</span>WHAT IS ON
+            <div class="name-tw">最新資訊｜</div><div class="name-en">WHAT IS ON</div>
         </div>
         @*<img src="~/image/event-newyear.jpg" alt="" class="mw-100" />*@
         <picture>
@@ -173,15 +174,15 @@
         <div class="inner-content-section">
             <div class="transportation-info">
                 <div class="title">
-                    <span>交通資訊｜</span>TRANSPORTATION INFO
+                    <div class="name-tw">交通資訊｜</div><div class="name-en">TRANSPORTATION INFO</div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.3965107573276!2d121.52986061484368!3d25.122282183931066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ae7e9a9974e1%3A0x3ae46b51dbe03b57!2sWOW%20BRAVO%20%26%20FUNKY%20RAP!5e0!3m2!1szh-TW!2stw!4v1677314012798!5m2!1szh-TW!2stw" width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="WOW BRAVO & FUNKY RAP Google Map"></iframe>
             </div>
             <div class="address-info d-none d-lg-block">
-                <div class="address-left address-item-first">W&F ADDRESS：</div>
+                <div class="address-left">W&F ADDRESS：</div>
                 <div class="address-right">
-                    <div class="address-item address-item-first">台北市士林區中山北路七段118號</div>
-                    <div class="address-item">No.118, Sec.7, Zhongshan N. Rd., Shilin Dist., Taipei City 11151</div>
+                    <div class="address-item name-tw">台北市士林區中山北路七段118號</div>
+                    <div class="address-item name-en">No.118, Sec.7, Zhongshan N. Rd., Shilin Dist., Taipei City 11151</div>
                     <div class="address-item">營業時間 TIME / 13:30-21:30</div>
                     <div class="address-item">(02) 2874-0517</div>
                 </div>
