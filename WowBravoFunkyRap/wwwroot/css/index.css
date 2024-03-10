@@ -188,6 +188,15 @@
     .introduce .logo-horizontal {
         width: 350px;
     }
+    .content-section .title .name-tw {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .content-section .title .name-en {
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
 
 @media screen and (max-width: 414px) {

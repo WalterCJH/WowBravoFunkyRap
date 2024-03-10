@@ -155,6 +155,10 @@ body {
     margin-bottom: 50px;
 }
 
+.phone {
+    color: #000 !important;
+}
+
 /* md */
 @media screen and (max-width: 768px) {
     .wrap {

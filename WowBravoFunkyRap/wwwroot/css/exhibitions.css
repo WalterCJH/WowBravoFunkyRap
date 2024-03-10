@@ -4,7 +4,6 @@
     overflow: hidden;
     /*border: 1px solid #ccc;*/
     background-color: #EFEFEF;
-    color: #696969;
     margin-bottom: 36px;
 }
 
@@ -21,6 +20,7 @@
     font-weight: 500;
     font-size: 16px;
     width: 195px;
+    color: #696969 !important;
 }
 
     .tab-btn .zh-tc {
@@ -43,7 +43,7 @@
 
     /* Create an active/current tablink class */
     .tab-btn.active {
-        color: #ffffff;
+        color: #ffffff !important;
         background-color: #000000;
     }
 
