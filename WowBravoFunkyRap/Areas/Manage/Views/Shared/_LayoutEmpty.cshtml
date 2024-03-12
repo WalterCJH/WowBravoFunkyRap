@@ -1,0 +1,66 @@
+﻿@{
+    var menus = ViewBag.Menus as List<Menu>;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - @CommonStr.WebName</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/css/manage-site.min.css" />
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+
+<body class="hold-transition">
+    @RenderBody()
+
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <script src="~/js/manage-site.js"></script>
+    @*
+    @if (TempData[SessionStr.SuccessMessage] != null)
+    {
+    <div class="toast-container position-absolute p-3 top-0 start-50 translate-middle-x" id="toastPlacement" data-original-class="toast-container position-absolute p-3">
+    <div class="toast fade show align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+    <div class="toast-body">
+    @TempData[SessionStr.SuccessMessage]
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-coreui-dismiss="toast" aria-label="Close"></button>
+    </div>
+    </div>
+    </div>
+    }
+
+    @if (TempData[SessionStr.ErrorMessage] != null)
+    {
+    <div class="toast-container position-absolute p-3 top-0 start-50 translate-middle-x" id="toastPlacement" data-original-class="toast-container position-absolute p-3">
+    <div class="toast fade show align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+    <div class="toast-body">
+    @TempData[SessionStr.ErrorMessage]
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-coreui-dismiss="toast" aria-label="Close"></button>
+    </div>
+    </div>
+    </div>
+    }
+    *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

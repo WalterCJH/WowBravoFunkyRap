@@ -1,0 +1,33 @@
+﻿@model UserCommon
+
+@{
+    ViewData["Title"] = "使用者 - 新增";
+
+    var headerBread = new HeaderWithBreadcrumb();
+    headerBread.BreadcrumbItems.Add(new BreadcrumbItem() { Action = "Index", Controller = "Users", Title = "使用者" });
+}
+
+<partial name="_HeaderWithBreadcrumbPartial" model="headerBread" />
+
+<section class="content">
+    <div class="container-fluid">
+        <form asp-action="Create">
+            <div class="row">
+                <div class="col-12 mb-3 text-right">
+                    <partial name="_IndexBtn" model="ViewHelper.GetBtn(null, CommonStr.Users, CommonStr.Index)" />
+                </div>
+                <partial name="_Content" model="Model" />
+                <div class="col-12 mb-3 text-right">
+                    <partial name="_SaveBtn" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        <script src="~/js/all-check.js"></script>
+    }
+}

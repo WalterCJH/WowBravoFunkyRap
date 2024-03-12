@@ -1,0 +1,123 @@
+﻿@model UserCommon
+@{
+    string path = Context.Request.Path;
+    bool isShowUserLog = path.Contains("Create") == false;
+}
+
+<div class="col-md-6">
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">基本資料</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <div asp-validation-summary="ModelOnly"></div>
+                </div>
+                <div class="col-12">
+                    <div class="row mb-3">
+                        <div class="col-auto">
+                            <switch asp-for="IsEnabled" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Account" class="form-label"></label>
+                        <input asp-for="Account" class="form-control" />
+                        <span asp-validation-for="Account"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="LastName" class="form-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="DisplaySeq" class="form-label"></label>
+                        <input asp-for="DisplaySeq" class="form-control" />
+                        <span asp-validation-for="DisplaySeq"></span>
+                    </div>
+                </div>
+                @if (isShowUserLog)
+                {
+                    <partial name="_UserLog" model="Model" />
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">角色設定</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row js-div-check">
+                <div class="col-12">
+                    <div class="mb-1">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="allcheck" class="custom-control-input js-all-check me-2" />
+                            <label for="allcheck" class="custom-control-label">全選</label>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled mb-0">
+                        @for (int i = 0; i < Model.UserRoleItems.Count(); i++)
+                        {
+                            var items = Model.UserRoleItems.ToList();
+                            string name_RoleId = $"UserRoleItems[{i}].RoleId";
+                            string name_RoleName = $"UserRoleItems[{i}].RoleName";
+                            string name_Selected = $"UserRoleItems[{i}].Selected";
+                            string name_DisplaySeq = $"UserRoleItems[{i}].DisplaySeq";
+
+                            <li class="d-inline-block me-2 mb-1">
+                                <div class="custom-control custom-checkbox">
+                                    <input asp-for="@items[i].Selected" type="checkbox" class="custom-control-input js-check" id="@name_Selected" name="@name_Selected">
+                                    <label for="@name_Selected" class="custom-control-label">@items[i].RoleName</label>
+                                    <input type="hidden" asp-for="@items[i].RoleId" id="@name_RoleId" name="@name_RoleId" />
+                                    <input type="hidden" asp-for="@items[i].RoleName" id="@name_RoleName" name="@name_RoleName" />
+                                    <input type="hidden" asp-for="@items[i].DisplaySeq" id="@name_DisplaySeq" name="@name_DisplaySeq" />
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

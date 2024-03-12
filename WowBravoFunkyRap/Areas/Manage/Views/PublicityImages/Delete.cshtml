@@ -1,0 +1,32 @@
+﻿@model PublicityImageCommon
+
+@{
+    ViewData["Title"] = "宣傳圖片 - 刪除";
+
+    var headerBread = new HeaderWithBreadcrumb();
+    headerBread.BreadcrumbItems.Add(new BreadcrumbItem() { Action = "Index", Controller = "PublicityImages", Title = "宣傳圖片" });
+}
+
+<partial name="_HeaderWithBreadcrumbPartial" model="headerBread" />
+
+<section class="content">
+    <div class="container-fluid">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="row">
+                <div class="col-12 mb-3 text-right">
+                    <partial name="_IndexBtn" model="ViewHelper.GetBtn(null, CommonStr.PublicityImages, CommonStr.Index)" />
+                </div>
+                <div class="col-12">
+                    <div class="row js-readonly">
+                        <partial name="_Content" model="Model" />
+                    </div>
+                </div>
+                <div class="col-12 mb-3 text-right">
+                    <partial name="_SaveDeleteBtn" />
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

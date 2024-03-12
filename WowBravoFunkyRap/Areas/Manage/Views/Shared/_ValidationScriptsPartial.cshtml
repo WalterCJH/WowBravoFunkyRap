@@ -1,0 +1,17 @@
+﻿<script>
+    $(document).ready(function () {
+        // Override the default settings for the validator
+        // $.validator.setDefaults({
+        //     errorClass: "is-invalid",
+        //     validClass: "invalid-feedback" // if you want to style the valid state as well
+        // });
+
+        // Override the default settings for the validation summary
+        $.validator.unobtrusive.options = {
+            errorClass: "is-invalid",
+            validClass: "invalid-feedback"
+        };
+    });
+</script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

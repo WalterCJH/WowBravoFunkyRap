@@ -1,0 +1,25 @@
+﻿@model UserCommon
+
+@{
+    ViewData["Title"] = "使用者 - 檢視";
+
+    var headerBread = new HeaderWithBreadcrumb();
+    headerBread.BreadcrumbItems.Add(new BreadcrumbItem() { Action = "Index", Controller = "Users", Title = "使用者" });
+}
+
+<partial name="_HeaderWithBreadcrumbPartial" model="headerBread" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mb-3 text-right">
+                <partial name="_IndexBtn" model="ViewHelper.GetBtn(null, CommonStr.Users, CommonStr.Index)" />
+            </div>
+            <div class="col-12">
+                <div class="row js-readonly">
+                    <partial name="_Content" model="Model" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WowBravoFunkyRap", "WowBrav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowBravoFunkyRap.Model", "WowBravoFunkyRap.Model\WowBravoFunkyRap.Model.csproj", "{E4166BE1-BEA5-404E-B417-7901CC1736C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowBravoFunkyRap.Shared", "WowBravoFunkyRap.Shared\WowBravoFunkyRap.Shared.csproj", "{CC7A15A6-EAF3-4477-9B03-AB632B065A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WowBravoFunkyRap.Service", "WowBravoFunkyRap.Service\WowBravoFunkyRap.Service.csproj", "{D4AA8C4C-106D-4EDB-8F5E-C6476F50BA77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{E4166BE1-BEA5-404E-B417-7901CC1736C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4166BE1-BEA5-404E-B417-7901CC1736C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4166BE1-BEA5-404E-B417-7901CC1736C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7A15A6-EAF3-4477-9B03-AB632B065A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7A15A6-EAF3-4477-9B03-AB632B065A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7A15A6-EAF3-4477-9B03-AB632B065A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7A15A6-EAF3-4477-9B03-AB632B065A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AA8C4C-106D-4EDB-8F5E-C6476F50BA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AA8C4C-106D-4EDB-8F5E-C6476F50BA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AA8C4C-106D-4EDB-8F5E-C6476F50BA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AA8C4C-106D-4EDB-8F5E-C6476F50BA77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

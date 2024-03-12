@@ -8,10 +8,10 @@ namespace WowBravoFunkyRap.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly WowBravoFunkyRapContext _db;
+        private readonly WowBravoFunkyRapDbContext _db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, WowBravoFunkyRapContext db)
+        public HomeController(ILogger<HomeController> logger, WowBravoFunkyRapDbContext db)
         {
             _logger = logger;
             _db = db;

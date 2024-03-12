@@ -39,5 +39,11 @@
     "inputFiles": [
       "wwwroot/css/site.css"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/css/manage-site.min.css",
+    "inputFiles": [
+      "wwwroot/css/manage-site.css"
+    ]
   }
 ]

@@ -1,0 +1,110 @@
+﻿@model UserFilter
+
+@{
+    ViewData["Title"] = "使用者 - 列表";
+    var current = Model.Results.GetEnumerator().Current;
+    object SetRouteValue(string sortBy, string sortDirection, int? pageNo = null)
+    {
+        var value = new { SortBy = sortBy, SortDirection = sortDirection, PageNo = pageNo, Keyword = Model.Keyword };
+        return value;
+    }
+}
+
+<partial name="_HeaderWithBreadcrumbPartial" model="null" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <form asp-action="Index">
+                            <div class="row">
+                                <div class="col-12 mb-3 text-right">
+                                    <partial name="_ImportBtn" model="ViewHelper.GetBtn()" />
+                                    <partial name="_ExportBtn" model="ViewHelper.GetBtn()" />
+                                    <partial name="_CreateBtn" model="ViewHelper.GetBtn()" />
+                                </div>
+                                <hr />
+                                <div class="col-6 col-md-3 mb-3">
+                                    <label asp-for="Keyword" class="form-label"></label>
+                                    <input asp-for="Keyword" class="form-control" placeholder="帳號、姓名、Email" />
+                                </div>
+                                <div class="col-12">
+                                    <partial name="_SearchBtn" />
+                                    <partial name="_SearchClearBtn" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-head-fixed text-nowrap table-striped border">
+                                <thead>
+                                    <tr>
+                                        <th class="sorting @Model.GetSortByClass(nameof(current.IsEnabled))">
+                                            <a href="@Url.Action("Index", SetRouteValue(nameof(current.IsEnabled), Model.GetSortBy(nameof(current.IsEnabled))))">@Html.DisplayNameFor(model => current.IsEnabled)</a>
+                                        </th>
+                                        <th class="sorting @Model.GetSortByClass(nameof(current.Account))">
+                                            <a href="@Url.Action("Index", SetRouteValue(nameof(current.Account), Model.GetSortBy(nameof(current.Account))))">@Html.DisplayNameFor(model => current.Account)</a>
+                                        </th>
+                                        <th class="sorting @Model.GetSortByClass(nameof(current.LastName))">
+                                            <a href="@Url.Action("Index", SetRouteValue(nameof(current.LastName), Model.GetSortBy(nameof(current.LastName))))">@Html.DisplayNameFor(model => current.Name)</a>
+                                        </th>
+                                        <th class="sorting @Model.GetSortByClass(nameof(current.Email))">
+                                            <a href="@Url.Action("Index", SetRouteValue(nameof(current.Email), Model.GetSortBy(nameof(current.Email))))">@Html.DisplayNameFor(model => current.Email)</a>
+                                        </th>
+                                        <th class="sorting @Model.GetSortByClass(nameof(current.DisplaySeq))">
+                                            <a href="@Url.Action("Index", SetRouteValue(nameof(current.DisplaySeq), Model.GetSortBy(nameof(current.DisplaySeq))))">@Html.DisplayNameFor(model => current.DisplaySeq)</a>
+                                        </th>
+                                        <th style="width: 20%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Results)
+                                    {
+                                        <tr class="align-middle">
+                                            <td>
+                                                <switch asp-for="@item.IsEnabled" asp-label="false" readonly />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Account)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Email)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.DisplaySeq)
+                                            </td>
+                                            <td>
+                                                <partial name="_EditBtn" model="ViewHelper.GetBtn(item.Id)" />
+                                                <partial name="_DetailsBtn" model="ViewHelper.GetBtn(item.Id)" />
+                                                <partial name="_DeleteBtn" model="ViewHelper.GetBtn(item.Id)" />
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-center mt-3">
+                                @Html.PagedListPager(Model.Results, page => Url.Action("Index", SetRouteValue(Model.SortBy, Model.SortDirection, page)),
+                                new PagedListRenderOptions()
+                                {
+                                LiElementClasses = new string[1] { "paginate_button page-item" },
+                                PageClasses = new string[1] { "page-link" },
+                                MaximumPageNumbersToDisplay = 5,
+                                })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

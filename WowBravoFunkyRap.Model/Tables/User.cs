@@ -41,7 +41,7 @@ namespace WowBravoFunkyRap.Model.Tables
         [Display(Name = "顯示順序")]
         public int DisplaySeq { get; set; }
 
-        //public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
+        public virtual ICollection<UserRole> UserRoles { get; set; } = new List<UserRole>();
 
 
 
