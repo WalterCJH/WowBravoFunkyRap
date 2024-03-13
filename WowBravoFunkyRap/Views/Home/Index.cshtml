@@ -1,19 +1,21 @@
-﻿@{
+﻿@model HomePage
+
+@{
     ViewData["Title"] = "";
 }
 
-@section Styles{
+@section Styles {
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" as="style" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/splide-cus.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
 }
-@section Scripts{
+@section Scripts {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/js/splide.min.js" integrity="sha512-4TcjHXQMLM7Y6eqfiasrsnRCc8D/unDeY1UGKGgfwyLUCTsHYMxF7/UHayjItKQKIoP6TTQ6AMamb9w2GMAvNg==" crossorigin="anonymous" referrerpolicy="no-referrer" asp-append-version="true"></script>
     @*<script src="~/lib/splide/splide-extension-intersection.min.js"></script>*@
     <script>
-        var splide = new Splide('.splide', {
+        var splide = new Splide('#banner-slider', {
             // 1個Banner為1個進度條
             //autoplay: 'pause',
             //intersection: {
@@ -57,13 +59,22 @@
 
 
         splide.mount();
-                                            //splide.mount(window.splide.Extensions);
+        //splide.mount(window.splide.Extensions);
+        // var newsSplide = new Splide('.splide');
+        // newsSplide.mount();
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('#news-slider', {
+                type: 'loop',
+                speed: '3000',
+                autoplay: true,
+            }).mount();
+        });
     </script>
 }
 
 <div class="container-banner">
     <div class="banner">
-        <section class="splide" aria-label="Splide Basic HTML Example">
+        <section id="banner-slider" class="splide" aria-label="Splide Basic HTML Example">
             <div class="splide__arrows">
                 <button class="splide__arrow splide__arrow--prev">
                     <i class="fa-solid fa-angle-left"></i>
@@ -74,38 +85,29 @@
             </div>
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <picture>
-                            <source srcset="~/image/banner/Banner-1.webp" type="image/webp" media="(min-width:577px)">
-                            <source srcset="~/image/banner/Banner-1_sm.webp" type="image/webp" media="(max-width:576px)">
-                            <source srcset="~/image/banner/Banner-1_xs.webp" type="image/webp" media="(max-width:414px)">
-                            <img src="~/image/banner/Banner-1.jpg" alt="banner" title="banner" class="mw-100">
-                        </picture>
-                    </li>
-                    <li class="splide__slide">
-                        <picture>
-                            <source srcset="~/image/banner/Banner-2.webp" type="image/webp" media="(min-width:577px)">
-                            <source srcset="~/image/banner/Banner-2_sm.webp" type="image/webp" media="(max-width:576px)">
-                            <source srcset="~/image/banner/Banner-2_xs.webp" type="image/webp" media="(max-width:414px)">
-                            <img src="~/image/banner/Banner-2.jpg" alt="banner" title="banner" class="mw-100" loading="lazy">
-                        </picture>
-                    </li>
-                    <li class="splide__slide">
-                        <picture>
-                            <source srcset="~/image/banner/Banner-3.webp" type="image/webp" media="(min-width:577px)">
-                            <source srcset="~/image/banner/Banner-3_sm.webp" type="image/webp" media="(max-width:576px)">
-                            <source srcset="~/image/banner/Banner-3_xs.webp" type="image/webp" media="(max-width:414px)">
-                            <img src="~/image/banner/Banner-3.jpg" alt="banner" title="banner" class="mw-100" loading="lazy">
-                        </picture>
-                    </li>
-                    <li class="splide__slide">
-                        <picture>
-                            <source srcset="~/image/banner/Banner-4.webp" type="image/webp" media="(min-width:577px)">
-                            <source srcset="~/image/banner/Banner-4_sm.webp" type="image/webp" media="(max-width:576px)">
-                            <source srcset="~/image/banner/Banner-4_xs.webp" type="image/webp" media="(max-width:414px)">
-                            <img src="~/image/banner/Banner-4.jpg" alt="banner" title="banner" class="mw-100" loading="lazy">
-                        </picture>
-                    </li>
+                    @foreach (var item in Model.BannerImages)
+                    {
+                        <li class="splide__slide">
+                            @if (string.IsNullOrWhiteSpace(item.ImageLink))
+                            {
+                                <picture>
+                                    <source srcset="@item.ImageUrlSm" type="image/webp" media="(max-width:576px)">
+                                    <source srcset="@item.ImageUrlXs" type="image/webp" media="(max-width:414px)">
+                                    <img src="@item.ImageUrl" alt="@item.ImageAlt" title="@item.ImageTitle" class="mw-100">
+                                </picture>
+                            }
+                            else
+                            {
+                                <a href="@item.ImageLink">
+                                    <picture>
+                                        <source srcset="@item.ImageUrlSm" type="image/webp" media="(max-width:576px)">
+                                        <source srcset="@item.ImageUrlXs" type="image/webp" media="(max-width:414px)">
+                                        <img src="@item.ImageUrl" alt="@item.ImageAlt" title="@item.ImageTitle" class="mw-100">
+                                    </picture>
+                                </a>
+                            }
+                        </li>
+                    }
                 </ul>
             </div>
             <div class="splide__progress">
@@ -121,12 +123,12 @@
         <div class="introduce">
             <div>
                 <picture>
-             @*       <source srcset="~/image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
-                    <source srcset="~/image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">*@
-                    <img src="~/image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo-horizontal">
+                    @*       <source srcset="~/Image/logo_horizontal.webp" type="image/webp" media="(min-width:577px)">
+                    <source srcset="~/Image/logo_horizontal_m.webp" type="image/webp" media="(max-width:576px)">*@
+                    <img src="~/Image/logo_horizontal.svg" alt="Logo Horizontal" title="Logo Horizontal" class="mw-100 logo-horizontal">
                 </picture>
             </div>
-            @*<img src="~/image/logo_horizontal.svg" alt="" class="mw-100 logo-horizontal" />*@
+            @*<img src="~/Image/logo_horizontal.svg" alt="" class="mw-100 logo-horizontal" />*@
             <div class="section-first">
                 <p>
                     WOW BRAVO & FUNKY RAP 是一個堅持理想的台灣品牌，以精緻手工製作每一個設計細節，概念店 1F 以純白花園為意象，展示設計師們美麗的衣裳。
@@ -149,11 +151,11 @@
             </p>
         </div>
         <div class="brand-image">
-            @*<img src="~/image/brand-introduction.jpg" alt="" class="mw-100 exhibition" />*@
+            @*<img src="~/Image/brand-introduction.jpg" alt="" class="mw-100 exhibition" />*@
             <picture>
-                <source srcset="~/image/brand-introduction.webp" type="image/webp" media="(min-width:577px)">
-                <source srcset="~/image/brand-introduction_m.webp" type="image/webp" media="(max-width:576px)">
-                <img src="~/image/brand-introduction.jpg" alt="花的異想世界" title="花的異想世界" class="mw-100" loading="lazy">
+                <source srcset="~/Image/brand-introduction.webp" type="image/webp" media="(min-width:577px)">
+                <source srcset="~/Image/brand-introduction_m.webp" type="image/webp" media="(max-width:576px)">
+                <img src="~/Image/brand-introduction.jpg" alt="花的異想世界" title="花的異想世界" class="mw-100" loading="lazy">
             </picture>
         </div>
     </div>
@@ -162,12 +164,38 @@
         <div class="title">
             <div class="name-tw">最新資訊｜</div><div class="name-en">WHAT IS ON</div>
         </div>
-        @*<img src="~/image/event-newyear.jpg" alt="" class="mw-100" />*@
-        <picture>
-            <source srcset="~/image/event-newyear.webp" type="image/webp" media="(min-width:577px)">
-            <source srcset="~/image/event-newyear_m.webp" type="image/webp" media="(max-width:576px)">
-            <img src="~/image/event-newyear.jpg" alt="event-newyear" class="mw-100" loading="lazy">
-        </picture>
+        <section id="news-slider" class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    @foreach (var item in Model.NewsImages)
+                    {
+                        <li class="splide__slide">
+                            @if (string.IsNullOrWhiteSpace(item.ImageLink))
+                            {
+                                <picture>
+                                    <source srcset="@item.ImageUrlSm" type="image/webp" media="(max-width:576px)">
+                                    <source srcset="@item.ImageUrlXs" type="image/webp" media="(max-width:414px)">
+                                    <img src="@item.ImageUrl" alt="@item.ImageAlt" title="@item.ImageTitle" class="mw-100">
+                                </picture>
+                            }
+                            else
+                            {
+                                <a href="@item.ImageLink">
+                                    <picture>
+                                        <source srcset="@item.ImageUrlSm" type="image/webp" media="(max-width:576px)">
+                                        <source srcset="@item.ImageUrlXs" type="image/webp" media="(max-width:414px)">
+                                        <img src="@item.ImageUrl" alt="@item.ImageAlt" title="@item.ImageTitle" class="mw-100">
+                                    </picture>
+                                </a>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="splide__progress">
+                <div class="splide__progress__bar"></div>
+            </div>
+        </section>
     </div>
 
     <div class="content-section">
@@ -191,11 +219,11 @@
     </div>
 
     <div class="content-section">
-        @*<img src="~/image/W&F-MAP.jpg" alt="" class="mw-100 logo-horizontal" />*@
+        @*<img src="~/Image/W&F-MAP.jpg" alt="" class="mw-100 logo-horizontal" />*@
         <picture>
-            <source srcset="~/image/W&F-MAP.webp" type="image/webp" media="(min-width:577px)">
-            <source srcset="~/image/W&F-MAP_m.webp" type="image/webp" media="(max-width:576px)">
-            <img src="~/image/W&F-MAP.jpg" alt="W&F地圖" title="W&F地圖" class="mw-100" loading="lazy">
+            <source srcset="~/Image/W&F-MAP.webp" type="image/webp" media="(min-width:577px)">
+            <source srcset="~/Image/W&F-MAP_m.webp" type="image/webp" media="(max-width:576px)">
+            <img src="~/Image/W&F-MAP.jpg" alt="W&F地圖" title="W&F地圖" class="mw-100" loading="lazy">
         </picture>
     </div>
 </div>

@@ -15,9 +15,9 @@ using WowBravoFunkyRap.Model;
 using WowBravoFunkyRap.Model.Tables;
 
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
-
 
 try
 {
@@ -44,9 +44,9 @@ try
             options.Cookie.HttpOnly = true;
             //options.Cookie.SecurePolicy = CookieSecurePolicy.Secure;
             options.ExpireTimeSpan = TimeSpan.FromMinutes(1); // 身份驗證 cookie 的過期時間
-            options.LoginPath = "/Accounts/Login";
-            options.LogoutPath = "/Accounts/Logout";
-            options.AccessDeniedPath = "/Accounts/AccessDenied";
+            options.LoginPath = "/Manage/Accounts/Login";
+            options.LogoutPath = "/Manage/Accounts/Logout";
+            options.AccessDeniedPath = "/Manage/Accounts/AccessDenied";
 
             //options.ReturnUrlParameter = "returnUrl"; // 用於保持原始請求URL的查詢字符串參數的名稱
             //options.SlidingExpiration = true; // 是否使用滑動的過期時間
@@ -129,18 +129,6 @@ try
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
     });
-
-    //app.MapControllerRoute(
-    //    name: "default",
-    //    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-    //app.UseEndpoints(endpoints =>
-    //{
-    //    endpoints.MapControllerRoute(
-    //      name: "areas",
-    //      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-    //    );
-    //});
 
     app.Run();
 

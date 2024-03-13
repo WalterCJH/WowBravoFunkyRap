@@ -22,6 +22,7 @@ namespace WowBravoFunkyRap.Model.Migrations
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     PublicityImageType = table.Column<int>(type: "int", nullable: false),
+                    ImageLink = table.Column<string>(type: "NVARCHAR(500)", maxLength: 500, nullable: true),
                     ImageUrl = table.Column<string>(type: "NVARCHAR(100)", maxLength: 100, nullable: false),
                     ImageTitle = table.Column<string>(type: "NVARCHAR(50)", maxLength: 50, nullable: false),
                     ImageAlt = table.Column<string>(type: "NVARCHAR(100)", maxLength: 100, nullable: false),
@@ -135,12 +136,12 @@ namespace WowBravoFunkyRap.Model.Migrations
                 columns: new[] { "Id", "CreateTime", "CreateUserId", "DisplaySeq", "Name", "UpdateTime", "UpdateUserId" },
                 values: new object[,]
                 {
-                    { new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860"), null, null, 2, "宣傳圖片查詢", null, null },
-                    { new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349"), null, null, 4, "使用者查詢", null, null },
-                    { new Guid("7d8d8453-f096-4c15-942e-900fde46ad37"), null, null, 5, "角色設定", null, null },
-                    { new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f"), null, null, 1, "宣傳圖片設定", null, null },
-                    { new Guid("99fd5995-55b2-4625-8203-fe60ded5a252"), null, null, 3, "使用者設定", null, null },
-                    { new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690"), null, null, 6, "角色查詢", null, null }
+                    { new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655"), null, null, 4, "使用者查詢", null, null },
+                    { new Guid("3c00b351-6219-45df-b422-64af224f3641"), null, null, 3, "使用者設定", null, null },
+                    { new Guid("74e10ab9-6b46-4306-b859-a41183354714"), null, null, 6, "角色查詢", null, null },
+                    { new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285"), null, null, 1, "宣傳圖片設定", null, null },
+                    { new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1"), null, null, 2, "宣傳圖片查詢", null, null },
+                    { new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a"), null, null, 5, "角色設定", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -148,8 +149,8 @@ namespace WowBravoFunkyRap.Model.Migrations
                 columns: new[] { "Id", "Account", "CreateTime", "CreateUserId", "DisplaySeq", "Email", "FirstName", "IsEnabled", "LastName", "PasswordHash", "UpdateTime", "UpdateUserId" },
                 values: new object[,]
                 {
-                    { new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"), "walter", null, null, 0, "smickey33@gmail.com", "Walter", true, "Chen", "AQAAAAIAAYagAAAAELfLsvo0htr56tBtNkkj7EjJkwlKPRlUJKp/8lbTVdhtjzd9dfx7SjtBaAp9oWHbbA==", null, null },
-                    { new Guid("598788df-0c19-4f1e-b349-ab982a2b9981"), "joanne", null, null, 0, "wwjoannems@gmail.com", "Joanne", true, "Wang", "AQAAAAIAAYagAAAAELfLsvo0htr56tBtNkkj7EjJkwlKPRlUJKp/8lbTVdhtjzd9dfx7SjtBaAp9oWHbbA==", null, null }
+                    { new Guid("52e02831-fdf2-4eb8-a7ff-314d53f010dd"), "joanne", null, null, 0, "wwjoannems@gmail.com", "Joanne", true, "Wang", "AQAAAAIAAYagAAAAELfLsvo0htr56tBtNkkj7EjJkwlKPRlUJKp/8lbTVdhtjzd9dfx7SjtBaAp9oWHbbA==", null, null },
+                    { new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"), "walter", null, null, 0, "smickey33@gmail.com", "Walter", true, "Chen", "AQAAAAIAAYagAAAAELfLsvo0htr56tBtNkkj7EjJkwlKPRlUJKp/8lbTVdhtjzd9dfx7SjtBaAp9oWHbbA==", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -157,12 +158,12 @@ namespace WowBravoFunkyRap.Model.Migrations
                 columns: new[] { "Id", "RoleId" },
                 values: new object[,]
                 {
-                    { "PublicityImageRead", new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860") },
-                    { "PublicityImageWrite", new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f") },
-                    { "RoleRead", new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690") },
-                    { "RoleWrite", new Guid("7d8d8453-f096-4c15-942e-900fde46ad37") },
-                    { "UserRead", new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349") },
-                    { "UserWrite", new Guid("99fd5995-55b2-4625-8203-fe60ded5a252") }
+                    { "PublicityImageRead", new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1") },
+                    { "PublicityImageWrite", new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285") },
+                    { "RoleRead", new Guid("74e10ab9-6b46-4306-b859-a41183354714") },
+                    { "RoleWrite", new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a") },
+                    { "UserRead", new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655") },
+                    { "UserWrite", new Guid("3c00b351-6219-45df-b422-64af224f3641") }
                 });
 
             migrationBuilder.InsertData(
@@ -170,12 +171,12 @@ namespace WowBravoFunkyRap.Model.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") },
-                    { new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") },
-                    { new Guid("7d8d8453-f096-4c15-942e-900fde46ad37"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") },
-                    { new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") },
-                    { new Guid("99fd5995-55b2-4625-8203-fe60ded5a252"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") },
-                    { new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690"), new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71") }
+                    { new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") },
+                    { new Guid("3c00b351-6219-45df-b422-64af224f3641"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") },
+                    { new Guid("74e10ab9-6b46-4306-b859-a41183354714"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") },
+                    { new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") },
+                    { new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") },
+                    { new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a"), new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a") }
                 });
 
             migrationBuilder.CreateIndex(

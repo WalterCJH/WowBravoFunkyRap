@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="~/plugins/toastr/toastr.min.css">
     <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="~/css/manage-site.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body class="hold-transition sidebar-mini">
@@ -205,7 +206,7 @@
                         <img src="~/image/admin-user.svg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">@ViewBag.UserName</a>
+                        <a href="#" class="d-block">Hi @ViewBag.UserName</a>
                     </div>
                 </div>
                 @*
@@ -293,7 +294,10 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    @* <script src="~/plugins/jquery/jquery.min.js"></script> *@
+
     <!-- Bootstrap 4 -->
     <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -314,6 +318,8 @@
     <!-- AdminLTE App -->
     <script src="~/dist/js/adminlte.min.js"></script>
     <script src="~/js/manage-site.js"></script>
+    @* <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm"></script> *@
+
 
     @if (TempData[SessionStr.SuccessMessage] != null)
     {

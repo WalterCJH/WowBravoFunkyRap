@@ -13,6 +13,11 @@ namespace WowBravoFunkyRap.Model.Tables
         public PublicityImageType PublicityImageType { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
+        [MaxLength(500)]
+        [Display(Name = "圖片連結")]
+        public string? ImageLink { get; set; }
+
+        [Column(TypeName = "NVARCHAR")]
         [MaxLength(100)]
         [Display(Name = "圖片路徑")]
         public string ImageUrl { get; set; }

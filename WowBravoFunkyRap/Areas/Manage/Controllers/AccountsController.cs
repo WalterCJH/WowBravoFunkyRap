@@ -63,6 +63,12 @@ namespace WowBravoFunkyRap.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Login()
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+#if DEBUG
             var login = new Login();
             login.UserName = "walter";
             login.Password = "1234";
@@ -71,6 +77,7 @@ namespace WowBravoFunkyRap.Areas.Manage.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+#endif
 
             return View();
         }
@@ -134,7 +141,8 @@ namespace WowBravoFunkyRap.Areas.Manage.Controllers
 
                 var properties = new AuthenticationProperties
                 {
-                    IsPersistent = true,
+                    IsPersistent = login.KeepMeLoggedIn,
+                    //ExpiresUtc = DateTimeOffset.Now.AddSeconds(1)
                     ExpiresUtc = DateTimeOffset.Now.AddHours(4)
                     //ExpiresUtc = DateTimeOffset.UtcNow.AddHours(4)
                 };

@@ -9,27 +9,27 @@ using WowBravoFunkyRap.Model.Tables;
 
 namespace WowBravoFunkyRap.Areas.Manage.ViewModels.PublicityImages
 {
-    public class PublicityImageCommon : UserLog, IValidatableObject
+    public class PublicityImageCommon : UserLog//, IValidatableObject
     {
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            var db = validationContext.GetService<WowBravoFunkyRapDbContext>();
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        //{
+        //    var db = validationContext.GetService<WowBravoFunkyRapDbContext>();
 
-            var data = db.PublicityImages.AsQueryable().AsNoTracking();
-            if (Id != Guid.Empty)
-            {
-                data = data.Where(p => p.Id != Id);
-            }
+        //    var data = db.PublicityImages.AsQueryable().AsNoTracking();
+        //    if (Id != Guid.Empty)
+        //    {
+        //        data = data.Where(p => p.Id != Id);
+        //    }
 
-            if (PublicityImageType == Model.Enums.PublicityImageType.News)
-            {
-                var entity = data.FirstOrDefault(a => a.PublicityImageType == PublicityImageType && a.EndTime >= StartTime);
-                if (entity != null)
-                {
-                    yield return new ValidationResult($"日期區間重複：{entity.StartTime:yyyy/MM/dd HH:mm}~{entity.EndTime:yyyy/MM/dd HH:mm}", new string[] { nameof(StartTime), nameof(EndTime) });
-                }
-            }
-        }
+        //    if (PublicityImageType == Model.Enums.PublicityImageType.News)
+        //    {
+        //        var entity = data.FirstOrDefault(a => a.PublicityImageType == PublicityImageType && a.EndTime >= StartTime);
+        //        if (entity != null)
+        //        {
+        //            yield return new ValidationResult($"日期區間重複：{entity.StartTime:yyyy/MM/dd HH:mm}~{entity.EndTime:yyyy/MM/dd HH:mm}", new string[] { nameof(StartTime), nameof(EndTime) });
+        //        }
+        //    }
+        //}
 
         public Guid Id { get; set; }
 
@@ -38,6 +38,10 @@ namespace WowBravoFunkyRap.Areas.Manage.ViewModels.PublicityImages
 
         [Display(Name = "上傳圖片")]
         public IFormFile? UploadImage { get; set; }
+
+        [MaxLength(500)]
+        [Display(Name = "圖片連結")]
+        public string? ImageLink { get; set; }
 
         [Display(Name = "圖片")]
         public string? ImageFullUrl { get; set; }

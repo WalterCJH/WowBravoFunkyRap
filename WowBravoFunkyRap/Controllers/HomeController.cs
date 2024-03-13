@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using WowBravoFunkyRap.Model;
+using WowBravoFunkyRap.Model.Enums;
 using WowBravoFunkyRap.Model.Tables;
 using WowBravoFunkyRap.Models;
+using WowBravoFunkyRap.ViewModels.Home;
 
 namespace WowBravoFunkyRap.Controllers
 {
@@ -28,9 +31,38 @@ namespace WowBravoFunkyRap.Controllers
         //    return RedirectToAction("Index");
         //}
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var vm = new HomePage();
+
+            DateTime dtNow = DateTime.Now;
+
+            var publicityImages = await _db.PublicityImages.Where(c => c.StartTime <= dtNow && c.EndTime >= dtNow).ToListAsync();
+            foreach (var publicityImage in publicityImages.Where(c => c.PublicityImageType == PublicityImageType.Banner).OrderBy(c => c.DisplaySeq))
+            {
+                var publicityImageVm = new PublicityImageVm();
+                vm.BannerImages.Add(publicityImageVm);
+                publicityImageVm.ImageLink = publicityImage.ImageLink;
+                publicityImageVm.ImageUrl = publicityImage.ImageFullUrl;
+                publicityImageVm.ImageUrlSm = publicityImage.ImageFullUrlSm;
+                publicityImageVm.ImageUrlXs = publicityImage.ImageFullUrlXs;
+                publicityImageVm.ImageTitle = publicityImage.ImageTitle;
+                publicityImageVm.ImageAlt = publicityImage.ImageAlt;
+            }
+            foreach (var publicityImage in publicityImages.Where(c => c.PublicityImageType == PublicityImageType.News).OrderBy(c => c.DisplaySeq))
+            {
+                var publicityImageVm = new PublicityImageVm();
+                vm.NewsImages.Add(publicityImageVm);
+                publicityImageVm.ImageLink = publicityImage.ImageLink;
+                publicityImageVm.ImageUrl = publicityImage.ImageFullUrl;
+                publicityImageVm.ImageUrlSm = publicityImage.ImageFullUrlSm;
+                publicityImageVm.ImageUrlXs = publicityImage.ImageFullUrlXs;
+                publicityImageVm.ImageTitle = publicityImage.ImageTitle;
+                publicityImageVm.ImageAlt = publicityImage.ImageAlt;
+            }
+
+
+            return View(vm);
         }
 
         [HttpGet("/Exhibitions")]

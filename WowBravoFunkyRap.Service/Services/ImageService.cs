@@ -45,7 +45,7 @@ namespace WowBravoFunkyRap.Service.Services
             }
 
             string wwwrootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            string directoryPath = $"\\{FileStr.Image}\\{string.Join('\\', dto.DirectoryNameList)}";
+            string directoryPath = $"/{FileStr.Image}/{string.Join('/', dto.DirectoryNameList)}";
 
             string filePath = $"{wwwrootPath}{directoryPath}";
             Directory.CreateDirectory(filePath);

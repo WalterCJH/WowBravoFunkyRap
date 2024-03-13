@@ -39,6 +39,10 @@ namespace WowBravoFunkyRap.Model.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("NVARCHAR");
 
+                    b.Property<string>("ImageLink")
+                        .HasMaxLength(500)
+                        .HasColumnType("NVARCHAR");
+
                     b.Property<string>("ImageName")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -113,37 +117,37 @@ namespace WowBravoFunkyRap.Model.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f"),
+                            Id = new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285"),
                             DisplaySeq = 1,
                             Name = "宣傳圖片設定"
                         },
                         new
                         {
-                            Id = new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860"),
+                            Id = new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1"),
                             DisplaySeq = 2,
                             Name = "宣傳圖片查詢"
                         },
                         new
                         {
-                            Id = new Guid("99fd5995-55b2-4625-8203-fe60ded5a252"),
+                            Id = new Guid("3c00b351-6219-45df-b422-64af224f3641"),
                             DisplaySeq = 3,
                             Name = "使用者設定"
                         },
                         new
                         {
-                            Id = new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349"),
+                            Id = new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655"),
                             DisplaySeq = 4,
                             Name = "使用者查詢"
                         },
                         new
                         {
-                            Id = new Guid("7d8d8453-f096-4c15-942e-900fde46ad37"),
+                            Id = new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a"),
                             DisplaySeq = 5,
                             Name = "角色設定"
                         },
                         new
                         {
-                            Id = new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690"),
+                            Id = new Guid("74e10ab9-6b46-4306-b859-a41183354714"),
                             DisplaySeq = 6,
                             Name = "角色查詢"
                         });
@@ -167,32 +171,32 @@ namespace WowBravoFunkyRap.Model.Migrations
                         new
                         {
                             Id = "PublicityImageWrite",
-                            RoleId = new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f")
+                            RoleId = new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285")
                         },
                         new
                         {
                             Id = "PublicityImageRead",
-                            RoleId = new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860")
+                            RoleId = new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1")
                         },
                         new
                         {
                             Id = "UserWrite",
-                            RoleId = new Guid("99fd5995-55b2-4625-8203-fe60ded5a252")
+                            RoleId = new Guid("3c00b351-6219-45df-b422-64af224f3641")
                         },
                         new
                         {
                             Id = "UserRead",
-                            RoleId = new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349")
+                            RoleId = new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655")
                         },
                         new
                         {
                             Id = "RoleWrite",
-                            RoleId = new Guid("7d8d8453-f096-4c15-942e-900fde46ad37")
+                            RoleId = new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a")
                         },
                         new
                         {
                             Id = "RoleRead",
-                            RoleId = new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690")
+                            RoleId = new Guid("74e10ab9-6b46-4306-b859-a41183354714")
                         });
                 });
 
@@ -253,7 +257,7 @@ namespace WowBravoFunkyRap.Model.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
+                            Id = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
                             Account = "walter",
                             DisplaySeq = 0,
                             Email = "smickey33@gmail.com",
@@ -264,7 +268,7 @@ namespace WowBravoFunkyRap.Model.Migrations
                         },
                         new
                         {
-                            Id = new Guid("598788df-0c19-4f1e-b349-ab982a2b9981"),
+                            Id = new Guid("52e02831-fdf2-4eb8-a7ff-314d53f010dd"),
                             Account = "joanne",
                             DisplaySeq = 0,
                             Email = "wwjoannems@gmail.com",
@@ -292,33 +296,33 @@ namespace WowBravoFunkyRap.Model.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("8f904dc0-2318-4e14-878a-7ff1897a6b5f")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("8de9e40f-2b8a-4d7b-a8a0-19c050aed285")
                         },
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("1429d0ca-c012-4467-a0ce-40c345ea7860")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("b6955c4c-95b2-4651-ac1b-a9eeac3667f1")
                         },
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("99fd5995-55b2-4625-8203-fe60ded5a252")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("3c00b351-6219-45df-b422-64af224f3641")
                         },
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("2196a47c-4ada-46b5-a600-0d0f7ce08349")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("30f11ae8-2673-4f56-9a61-ed34572d2655")
                         },
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("7d8d8453-f096-4c15-942e-900fde46ad37")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("dd5f8b00-94f9-4577-b5a5-dbabfd813a8a")
                         },
                         new
                         {
-                            UserId = new Guid("5077c42f-8859-48c2-97e1-5d5a2e12fb71"),
-                            RoleId = new Guid("a5a53305-d5d0-49b8-9d55-d72d1da6f690")
+                            UserId = new Guid("f50da497-7558-4b3d-b51a-b000ccd5f99a"),
+                            RoleId = new Guid("74e10ab9-6b46-4306-b859-a41183354714")
                         });
                 });
 

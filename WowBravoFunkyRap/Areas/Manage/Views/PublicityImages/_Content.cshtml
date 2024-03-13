@@ -61,6 +61,13 @@
                         <span asp-validation-for="EndTime"></span>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label asp-for="ImageLink" class="form-label"></label>
+                        <input asp-for="ImageLink" class="form-control" />
+                        <span asp-validation-for="ImageLink"></span>
+                    </div>
+                </div>
                 @if (isShowUserLog)
                 {
                     <partial name="_UserLog" model="Model" />
@@ -85,6 +92,7 @@
                 <div class="col-12">
                     <div class="form-group">
                         <label asp-for="UploadImage"></label>
+                        <small>圖片自動轉換成寬度1160px</small>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">

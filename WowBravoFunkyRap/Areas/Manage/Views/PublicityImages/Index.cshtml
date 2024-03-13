@@ -67,6 +67,7 @@
                                 <tbody>
                                     @foreach (var item in Model.Results)
                                     {
+                                        string subHtml = $"<h4>{item.ImageTitle}</h4><p>{item.ImageAlt}</p>";
                                         <tr class="align-middle">
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.PublicityImageType)
@@ -74,8 +75,10 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.ImageTitle)
                                             </td>
-                                            <td>
-                                                <img src="@item.ImageFullUrl" class="small-image" />
+                                            <td class="lightgallery">
+                                                <a href="@item.ImageFullUrl" data-sub-html="@subHtml">
+                                                    <img src="@item.ImageFullUrl" class="small-image">
+                                                </a>
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.EffectiveTime)
@@ -112,3 +115,41 @@
         </div>
     </div>
 </section>
+@* 
+<div id="lightgallery">
+    @foreach (var item in Model.Results)
+    {
+        <a href="@item.ImageFullUrl" data-sub-html="<h4>圖片標題</h4><p>圖片描述</p>">
+            <img src="@item.ImageFullUrl" class="small-image">
+        </a>
+    }
+</div> *@
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            // 使用querySelectorAll選擇所有'.lightgallery'類別的元素
+            var galleries = document.querySelectorAll('.lightgallery');
+
+            // 遍歷每個元素並初始化lightGallery
+            galleries.forEach(function (gallery) {
+                lightGallery(gallery, {
+                    animateThumb: false,
+                    zoomFromOrigin: false,
+                    allowMediaOverlap: true,
+                    toggleThumb: true,
+                });
+            });
+
+            // // lightGallery(document.getElementsByClassName('lightgallery'), {
+            // lightGallery(document.getElementById('lightgallery'), {
+            //     animateThumb: false,
+            //     zoomFromOrigin: false,
+            //     allowMediaOverlap: true,
+            //     toggleThumb: true,
+            // });
+        });
+    </script>
+}
+

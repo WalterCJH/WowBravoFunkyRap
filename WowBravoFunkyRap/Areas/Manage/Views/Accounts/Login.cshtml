@@ -38,10 +38,8 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    記住我
-                                </label>
+                                <input asp-for="KeepMeLoggedIn" type="checkbox">
+                                <label asp-for="KeepMeLoggedIn"></label>
                             </div>
                         </div>
                         <div class="col-4">
@@ -49,7 +47,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="social-auth-links text-center mt-2 mb-3">
+                @* <div class="social-auth-links text-center mt-2 mb-3">
                     <a href="#" class="btn btn-block btn-primary">
                         <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
                     </a>
@@ -63,7 +61,7 @@
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                </p> *@
             </div>
 
         </div>
