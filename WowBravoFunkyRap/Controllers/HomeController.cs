@@ -71,6 +71,12 @@ namespace WowBravoFunkyRap.Controllers
             return View();
         }
 
+        [HttpGet("/Exhibition")]
+        public IActionResult Exhibition()
+        {
+            return View();
+        }
+
         //public IActionResult Index2()
         //{
         //    return View();

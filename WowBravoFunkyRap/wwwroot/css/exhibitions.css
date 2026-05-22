@@ -144,21 +144,21 @@
         justify-content: center !important;
         padding: 0 10px !important;
     }
+}
 
+/* md */
+@media screen and (max-width: 768px) {
+}
 
-    /* md */
-    @media screen and (max-width: 768px) {
+/* sm */
+@media screen and (max-width: 576px) {
+    .exhibition .item {
+        flex: 100%;
+        max-width: 100%;
+        padding: 0 !important;
     }
+}
 
-    /* sm */
-    @media screen and (max-width: 576px) {
-        .exhibition .item {
-            flex: 100%;
-            max-width: 100%;
-            padding: 0 !important;
-        }
-    }
-
-    /* xs */
-    @media screen and (max-width: 414px) {
-    }
+/* xs */
+@media screen and (max-width: 414px) {
+}

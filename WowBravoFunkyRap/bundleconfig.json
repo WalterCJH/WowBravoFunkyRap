@@ -29,6 +29,12 @@
     ]
   },
   {
+    "outputFileName": "wwwroot/css/exhibition.min.css",
+    "inputFiles": [
+      "wwwroot/css/exhibition.css"
+    ]
+  },
+  {
     "outputFileName": "wwwroot/css/splide-cus.min.css",
     "inputFiles": [
       "wwwroot/css/splide-cus.css"

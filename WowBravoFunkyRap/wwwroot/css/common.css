@@ -50,12 +50,15 @@ body {
     z-index: 1000;
 }
 
+.navbar-opacity {
+    background-color: #fff;
+}
+
 .navbar-nav {
     display: flex;
     align-items: center;
     padding: 20px 20px 20px 20px; /* NavBar高度 41+上下間距 */
     justify-content: space-between;
-    background-color: #fff;
 }
 
     .navbar-nav .img-logo {

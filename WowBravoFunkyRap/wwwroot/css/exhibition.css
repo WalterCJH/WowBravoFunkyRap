@@ -1,0 +1,116 @@
+
+
+/*
+.block-cover-image {
+    margin-bottom: 40px;
+    --height: calc(var(--vhSmall, 1vh)*70);
+}
+
+    .block-cover-image figure {
+        height: var(--height);
+    }
+
+    .block-cover-image img {
+        height: var(--height);
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }*/
+
+.hr {
+    border: 1px solid #D9D9D9;
+    margin: 48px 0;
+}
+
+.click-point-link {
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+}
+
+    .click-point-link .click-point {
+        margin-right: 8px;
+    }
+
+    .click-point-link .text {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.1em;
+    }
+
+        .click-point-link .text:hover {
+            border-bottom: 1px solid #000000;
+        }
+
+
+.banner {
+    margin: 0 -100px 40px -100px;
+}
+
+.exhibition-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .exhibition-info .title .name-tc {
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 35px;
+        align-items: center;
+        letter-spacing: 0.25em;
+        margin-bottom: 8px;
+    }
+
+    .exhibition-info .title .name-en {
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0.06em;
+    }
+
+    .exhibition-info .period {
+        height: 55px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.06em;
+        color: #707070;
+        border-left: 8px solid #EFEEEE;
+        padding-left: 16px;
+    }
+
+        .exhibition-info .period .period-day {
+            margin-bottom: 20px;
+        }
+
+.publicity-image {
+    margin-bottom: 40px;
+}
+
+
+
+/* xxl */
+@media screen and (max-width: 1400px) {
+}
+
+/* xl */
+@media screen and (max-width: 1145px) {
+}
+
+/* lg */
+@media screen and (max-width: 992px) {
+}
+
+/* md */
+@media screen and (max-width: 768px) {
+}
+
+/* sm */
+@media screen and (max-width: 576px) {
+}
+
+/* xs */
+@media screen and (max-width: 414px) {
+}

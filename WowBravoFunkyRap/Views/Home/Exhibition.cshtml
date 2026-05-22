@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "展覽";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/exhibition.css" />
+}
+@section Scripts {
+    <script>
+        // 初始化函數：設定 --vh 和 --vhSmall CSS 變量
+        function setViewportHeightVariables() {
+            // 計算視窗高度的1%
+            const vh = window.innerHeight * 0.01;
+
+            // 設定 --vh 和 --vhSmall CSS 變量
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            document.documentElement.style.setProperty('--vhSmall', `${vh}px`);
+        }
+
+        // 監聽視窗大小變化事件
+        window.addEventListener('resize', () => {
+            // 當視窗大小變化時，重新設定 CSS 變量
+            setViewportHeightVariables();
+        });
+
+        // 頁面加載時初始化 CSS 變量
+        setViewportHeightVariables();
+    </script>
+}
+@*
+<div class="block-cover-image">
+    <figure class="image">
+        <picture>
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 1200px)">
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 950px)">
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 600px)">
+            <img src="~/image/exhibition/展覽主banner.png" fetchpriority="high" class="ls-is-cached isLoaded">
+        </picture>
+    </figure>
+</div> *@
+<div class="container">
+    <div class="banner">
+        <picture>
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 1200px)">
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 950px)">
+            <source srcset="~/image/exhibition/展覽主banner.png" media="(min-width: 600px)">
+            <img src="~/image/exhibition/展覽主banner.png" class="mw-100">
+        </picture>
+    </div>
+</div>
+
+<div class="container">
+    <div class="exhibition-info">
+        <div class="title">
+            <div class="name-tc">
+                恆河漫步｜許僑芙創作個展
+            </div>
+            <div class="name-en">
+                Namaste | Chiao Fu solo Exhibition
+            </div>
+        </div>
+        <div class="period">
+            <div class="period-day">
+                January 07, 2020 - May 30, 2020
+            </div>
+            <div>
+                Curated by WOW BRAVO & FUNKY RAP
+            </div>
+        </div>
+    </div>
+    <hr class="hr" />
+
+    <div class="overview">
+        <div class="publicity">
+            <picture>
+                <source srcset="~/image/exhibition/海報(圖片加外框灰線).png" media="(min-width: 1200px)">
+                <source srcset="~/image/exhibition/海報(圖片加外框灰線).png" media="(min-width: 950px)">
+                <source srcset="~/image/exhibition/海報(圖片加外框灰線).png" media="(min-width: 600px)">
+                <img src="~/image/exhibition/海報(圖片加外框灰線).png" class="mw-100 publicity-image">
+            </picture>
+            <div class="pdf-review">
+                <a href="#" class="click-point-link">
+                    <div class="click-point"><img src="~/image/click-point.png" /></div>
+                    <div class="text">PDF of Exhibition Reviews</div>
+                </a>
+            </div>
+        </div>
+        <div class="overview-info">
+        </div>
+    </div>
+
+</div>
